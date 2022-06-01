@@ -27,7 +27,7 @@ if option == 'Text file':
 
 elif option == 'url':
     url_input = st.text_input("Please insert an url")
-    response = requests.get(url_input)
+    response = requests.get('http://'+url_input)
     response.encoding = "utf-8"
     text = response.text
     st.subheader("Here is your text: ")
