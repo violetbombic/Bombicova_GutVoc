@@ -57,8 +57,8 @@ elif option == 'url':
 
 #define stopwords
 unwanted_words_list = stopwords.words('english')
-unwanted_words_list_upper = [word.upper()] for word in unwanted_words_list
-st.write( unwanted_words )
+unwanted_words_list_upper = [word.upper() for word in unwanted_words_list]
+st.write( unwanted_words_list_upper)
 
 
 #update unwanted_words_list
