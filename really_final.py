@@ -29,7 +29,7 @@ if option == 'Text file':
         st.write(page_content)
     
 
- if option == 'url':
+elif option == 'url':
     st.text_input("Please insert an url")
 
 # if updated_file is not None:  
