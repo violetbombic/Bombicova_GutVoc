@@ -29,8 +29,8 @@ if option == 'Text file':
         st.write(page_content)
     
 
-   if option == 'url':
-   st.text_input("Please insert an url")
+ if option == 'url':
+    st.text_input("Please insert an url")
 
 # if updated_file is not None:  
 #     pdfReader = PdfFileReader(uploaded_file) 
