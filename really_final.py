@@ -16,8 +16,8 @@ st.write("Please insert a relative path of the PDF file. Note that the PDF file 
 #INPUT
 option = st.selectbox("What type of file you want to upload?", ('Text file', 'url'))
 if option == 'Text file':
-    updated_file = st.file_uploader("Please choose a file")
-    if updated_file is not None:  
+    uploaded_file = st.file_uploader("Please choose a file")
+    if uploaded_file is not None:  
         pdfReader = PdfFileReader(uploaded_file) 
         num_pages = pdfReader.numPages
 
