@@ -28,7 +28,7 @@ if option == 'Text file':
         start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
         end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
         text = text[start_:end_]
-        clean_text=re.sub("([^A-Za-z])"," ",text)
+        clean_text=re.sub("([^A-Za-z])"," ",text).upper()
         #st.write(clean_text)
         st.subheader("Here is your text: ")
         with st.expander("Please click here to see the full text"):
@@ -42,7 +42,7 @@ elif option == 'url':
     start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
     end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
     text = text[start_:end_]
-    clean_text=re.sub("([^A-Za-z])"," ",text)
+    clean_text=re.sub("([^A-Za-z])"," ",text).upper()
     #st.write(clean_text)       
     st.subheader("Here is your text: ")
     with st.expander("Please click here to see the full text"):
