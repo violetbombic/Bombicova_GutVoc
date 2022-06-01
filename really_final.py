@@ -48,7 +48,7 @@ elif option == 'url':
 #st.write( puncts_list )
 
 #define short_words
-short_words = [word for word in text1 if len(word) <= 2]
+short_words = [word for word in text if len(word) <= 2]
 #st.write(short_words)
 
 #define stopwords
