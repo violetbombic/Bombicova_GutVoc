@@ -27,8 +27,10 @@ if option == 'Text file':
         start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
         end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
         text = text[start_:end_]
-        st.subheader("Here is your text: ")
-        st.write(text)
+        clean_text=re.sub("([^A-Za-z])"," ",text)
+        st.write(clean_text)
+        #st.subheader("Here is your text: ")
+        #st.write(text)
         
 elif option == 'url':
     url_input = st.text_input("Please insert an url")
@@ -38,8 +40,10 @@ elif option == 'url':
     start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
     end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
     text = text[start_:end_]
-    st.subheader("Here is your text: ")
-    st.write(text)
+    clean_text=re.sub("([^A-Za-z])"," ",text)
+    st.write(clean_text)
+#     st.subheader("Here is your text: ")
+#     st.write(text)
     
 # PROCESSING
 # define punctuation
@@ -47,9 +51,6 @@ elif option == 'url':
 # puncts_list = [ s for s in puncts ]
 #st.write( puncts_list )
 
-#define short_words
-short_words = [word for word in text if len(word) <= 2]
-#st.write(short_words)
 
 #define stopwords
 unwanted_words_list = stopwords.words('english')
