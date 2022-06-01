@@ -4,6 +4,7 @@ import requests
 import nltk
 from nltk import word_tokenize, sent_tokenize
 nltk.download('punkt')
+nltk.download('stopwords')
 import io
 from io import StringIO
 from nltk.corpus import stopwords 
