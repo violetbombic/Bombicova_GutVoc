@@ -6,6 +6,8 @@ from nltk import word_tokenize, sent_tokenize
 nltk.download('punkt')
 import io
 from io import StringIO
+from nltk.corpus import stopwords 
+from string import punctuation
 
 #TITLE AND DESCRIPTION
 st.title("Project_Name")
@@ -21,27 +23,28 @@ if option == 'Text file':
         string_data = stringio.read()
         text = string_data
         st.subheader("Here is your text: ")
-        st.write(text)
-
-    
-
+        #st.write(text)
+        
 elif option == 'url':
     url_input = st.text_input("Please insert an url")
     response = requests.get(url_input)
     response.encoding = "utf-8"
     text = response.text
     st.subheader("Here is your text: ")
-    st.write(text)
+    #st.write(text)
+    
+# PROCESSING
+# define punctuation
+puncts = punctuation
+puncts_list = [ s for s in puncts ]
+st.write( puncts_list )
 
-# if updated_file is not None:  
-#     pdfReader = PdfFileReader(uploaded_file) 
-#     num_pages = pdfReader.numPages
+#define stopwords
+stopwords = stopwords.words('english')
+st.write( stopwords )
 
-#     page_content=""
-#     number_of_pages = pdfReader.getNumPages()
-#     for page_number in range(number_of_pages):
-#         page = pdfReader.getPage(page_number)
-#         page_content += page.extract_text()
-#     st.write(page_content)
+
+
+
 
 
