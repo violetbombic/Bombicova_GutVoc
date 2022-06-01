@@ -57,8 +57,8 @@ unwanted_words_list = stopwords.words('english')
 #st.write( unwanted_words )
 
 #update unwanted_words_list
-unwanted_words_list.extend(short_words)
-st.write(unwanted_words_list)
+#unwanted_words_list.extend(puncts_list)
+#st.write(unwanted_words_list)
 
 
 
