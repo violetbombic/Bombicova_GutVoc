@@ -13,7 +13,8 @@ from string import punctuation
 
 #TITLE AND DESCRIPTION
 st.title("Project_Name")
-st.write("Please insert a relative path of the PDF file. Note that the PDF file has to be saved in and copied from the same folder in GitHub, where  the .py file is. Try for example: CORE_INTENTIONAL_FEATURES_IN_THE_SYNTACT.pdf")
+user_name = st.text_input("Hello! What is you name?")
+st.write("Welcome!", uset_name, "ldjhakjshkjahfkjshfkjshfjs")
 
 
 #INPUT
@@ -30,7 +31,7 @@ if option == 'Text file':
         clean_text=re.sub("([^A-Za-z])"," ",text)
         #st.write(clean_text)
         st.subheader("Here is your text: ")
-        with st.expander("See the full text: "):
+        with st.expander("Please click here to see the full text"):
             st.write(text)
         
 elif option == 'url':
@@ -44,7 +45,7 @@ elif option == 'url':
     clean_text=re.sub("([^A-Za-z])"," ",text)
     #st.write(clean_text)       
     st.subheader("Here is your text: ")
-    with st.expander("See the full text: "):
+    with st.expander("Please click here to see the full text"):
         st.write(text)
     
 # PROCESSING
