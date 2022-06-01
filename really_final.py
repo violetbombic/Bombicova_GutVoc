@@ -23,26 +23,32 @@ if option == 'Text file':
         stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
         string_data = stringio.read()
         text = string_data
+        start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
+        end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
+        text = text[start_:end_]
         st.subheader("Here is your text: ")
-        #st.write(text)
+        st.write(text)
         
 elif option == 'url':
     url_input = st.text_input("Please insert an url")
     response = requests.get(url_input)
     response.encoding = "utf-8"
     text = response.text
+    start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
+    end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
+    text = text[start_:end_]
     st.subheader("Here is your text: ")
-    #st.write(text)
+    st.write(text)
     
 # PROCESSING
 # define punctuation
 puncts = punctuation
 puncts_list = [ s for s in puncts ]
-st.write( puncts_list )
+#st.write( puncts_list )
 
 #define stopwords
 stopwords = stopwords.words('english')
-st.write( stopwords )
+#st.write( stopwords )
 
 
 
