@@ -14,7 +14,7 @@ from string import punctuation
 #TITLE AND DESCRIPTION
 st.title("Project_Name")
 user_name = st.text_input("Hello! What is you name?")
-st.write("Welcome!", uset_name, "ldjhakjshkjahfkjshfkjshfjs")
+st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
 
 
 #INPUT
