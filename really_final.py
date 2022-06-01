@@ -18,7 +18,7 @@ option = st.selectbox("What type of file you want to upload?", ('Text file', 'ur
 if option == 'Text file':
     uploaded_file = st.file_uploader("Please choose a file")
     if uploaded_file is not None:
-        stringio = StringIO(uploaded_text_file.getvalue().decode("utf-8"))
+        stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
         string_data = stringio.read()
         text = string_data
         st.subheader("Here is your text: ")
