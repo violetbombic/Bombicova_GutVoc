@@ -28,9 +28,10 @@ if option == 'Text file':
         end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
         text = text[start_:end_]
         clean_text=re.sub("([^A-Za-z])"," ",text)
-        st.write(clean_text)
-        #st.subheader("Here is your text: ")
-        #st.write(text)
+        #st.write(clean_text)
+        st.subheader("Here is your text: ")
+        with st.expander("See the full text: "):
+            st.write(text)
         
 elif option == 'url':
     url_input = st.text_input("Please insert an url")
@@ -41,9 +42,10 @@ elif option == 'url':
     end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
     text = text[start_:end_]
     clean_text=re.sub("([^A-Za-z])"," ",text)
-    st.write(clean_text)
-#     st.subheader("Here is your text: ")
-#     st.write(text)
+    #st.write(clean_text)       
+    st.subheader("Here is your text: ")
+    with st.expander("See the full text: "):
+        st.write(text)
     
 # PROCESSING
 # define punctuation
