@@ -59,9 +59,16 @@ elif option == 'url':
 unwanted_words_list = stopwords.words('english')
 #st.write( unwanted_words )
 
+
 #update unwanted_words_list
 #unwanted_words_list.extend(puncts_list)
 #st.write(unwanted_words_list)
+
+#tokenize
+tokens = word_tokenize(clean_text)
+token_list = [ token for token in tokens if token not in unwanted_words_list ]
+st.write(token_list)
+
 
 
 
