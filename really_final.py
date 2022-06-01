@@ -1,6 +1,6 @@
 #IMPORTS AND DOWNLOADS
 import streamlit as st
-import request
+import requests
 import nltk
 from nltk import word_tokenize, sent_tokenize
 nltk.download('punkt')
