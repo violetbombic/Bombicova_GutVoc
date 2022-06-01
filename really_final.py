@@ -22,7 +22,7 @@ if option == 'Text file':
         string_data = stringio.read()
         text = string_data
         st.subheader("Here is your text: ")
-        st.text_area(text)
+        st.write(text)
 
     
 
