@@ -14,11 +14,23 @@ st.write("Please insert a relative path of the PDF file. Note that the PDF file 
 
 
 #INPUT
-option = st.radio("What type of file you want to upload?", ('Text file', 'url'))
+option = st.selectbox("What type of file you want to upload?", ('Text file', 'url'))
 if option == 'Text file':
     updated_file = st.file_uploader("Please choose a file")
-if option == 'url':
-    st.text_input("Please insert an url")
+    if updated_file is not None:  
+        pdfReader = PdfFileReader(uploaded_file) 
+        num_pages = pdfReader.numPages
+
+        page_content=""
+        number_of_pages = pdfReader.getNumPages()
+        for page_number in range(number_of_pages):
+            page = pdfReader.getPage(page_number)
+            page_content += page.extract_text()
+        st.write(page_content)
+    
+
+   if option == 'url':
+   st.text_input("Please insert an url")
 
 # if updated_file is not None:  
 #     pdfReader = PdfFileReader(uploaded_file) 
