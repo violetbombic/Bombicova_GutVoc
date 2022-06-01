@@ -43,16 +43,20 @@ elif option == 'url':
     
 # PROCESSING
 # define punctuation
-puncts = punctuation
-puncts_list = [ s for s in puncts ]
+# puncts = punctuation
+# puncts_list = [ s for s in puncts ]
 #st.write( puncts_list )
+
+#define short_words
+short_words = [word for word in text1 if len(word) <= 2]
+#st.write(short_words)
 
 #define stopwords
 unwanted_words_list = stopwords.words('english')
 #st.write( unwanted_words )
 
 #update unwanted_words_list
-unwanted_words_list.extend(puncts_list)
+unwanted_words_list.extend(short_words)
 st.write(unwanted_words_list)
 
 
