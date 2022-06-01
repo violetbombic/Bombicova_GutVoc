@@ -76,7 +76,7 @@ no_double = set(token_list)
 no_double_list = [word for word in no_double]
 #st.write(no_double_list)
 
-final_list = [word for word in no_double_list if len(word) <= 2]
+final_list = [word for word in no_double_list if len(word) >= 2]
 st.write(final_list)
 
 
