@@ -29,8 +29,9 @@ elif option == 'url':
     url_input = st.text_input("Please insert an url")
     response = requests.get(url_input)
     response.encoding = "utf-8"
+    text = response.text
     st.subheader("Here is your text: ")
-    st.write(response.text)
+    st.write(text)
 
 # if updated_file is not None:  
 #     pdfReader = PdfFileReader(uploaded_file) 
