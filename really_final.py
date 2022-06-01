@@ -71,7 +71,10 @@ token_list = [ token for token in tokens if token not in unwanted_words_list_upp
 #st.write(token_list)
 
 no_double = set(token_list)
-st.write(no_double)
+#st.write(no_double)
+
+no_double_list = [word for word in no_double]
+st.write(no_double_list)
 
 
 
