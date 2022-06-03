@@ -10,6 +10,7 @@ import io
 from io import StringIO
 from nltk.corpus import stopwords 
 from string import punctuation
+from googletrans import Translator
 
 #TITLE AND DESCRIPTION
 st.title("Project_Name")
@@ -79,6 +80,12 @@ no_double_list = [word for word in no_double]
 final_list = [word for word in no_double_list if len(word) >= 3]
 st.write(final_list)
 
-
+# Words translation
+translator = Translator()
+translation = []
+for word in words:
+    translword = translator.translate(word, lang)
+    translation.append(translword.text)
+    st.write(translation)
 
 
