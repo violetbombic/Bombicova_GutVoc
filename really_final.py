@@ -87,6 +87,6 @@ translation = []
 for word in final_list:
     translword = translator.translate(word, lang)
     translation.append(translword.text)
-    st.write(translation)
+st.write(translation)
 
 
