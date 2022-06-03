@@ -96,7 +96,7 @@ st.write(final_list)
 #lemmatization
 lemmatizer = WordNetLemmatizer()
 lemma = []
-for token in tokens:
+for token in final_list:
     lem = lemmatizer.lemmatize(token)
     lemma.append(lem)
 st.write(lemma)
