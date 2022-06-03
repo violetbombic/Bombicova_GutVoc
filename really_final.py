@@ -83,7 +83,7 @@ st.write(final_list)
 # Words translation
 translator = Translator()
 translation = []
-for word in words:
+for word in final_list:
     translword = translator.translate(word, lang)
     translation.append(translword.text)
     st.write(translation)
