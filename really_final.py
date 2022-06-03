@@ -7,6 +7,7 @@ from nltk import word_tokenize, sent_tokenize
 from nltk.stem import WordNetLemmatizer
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('wordnet')
 import io
 from io import StringIO
 from nltk.corpus import stopwords 
