@@ -4,6 +4,7 @@ import requests
 import re
 import nltk
 from nltk import word_tokenize, sent_tokenize
+from nltk.stem import WordNetLemmatizer
 nltk.download('punkt')
 nltk.download('stopwords')
 import io
@@ -82,11 +83,21 @@ st.write(final_list)
 
 # Words translation
 #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
-translator = Translator()
-translation = []
-for word in final_list[0]:
-    translword = translator.translate(word, dest='sk')
-    translation.append(translword.text)
-st.write(translation)
+# translator = Translator()
+# translation = []
+# for word in final_list[0]:
+#     translword = translator.translate(word, dest='sk')
+#     translation.append(translword.text)
+# st.write(translation)
+
+
+#lemmatization
+lemmatizer = WordNetLemmatizer()
+lemma = []
+for token in tokens:
+    lem = lemmatizer.lemmatize(token)
+    lemma.append(lem)
+ st.write(lemma)
+
 
 
