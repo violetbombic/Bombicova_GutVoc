@@ -81,11 +81,11 @@ final_list = [word for word in no_double_list if len(word) >= 3]
 st.write(final_list)
 
 # Words translation
-lang = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
+dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
 translator = Translator()
 translation = []
 for word in final_list:
-    translword = translator.translate(word, lang)
+    translword = translator.translate(word, dest)
     translation.append(translword.text)
 st.write(translation)
 
