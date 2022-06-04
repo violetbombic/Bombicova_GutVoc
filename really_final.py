@@ -2,17 +2,19 @@
 import streamlit as st
 import requests
 import re
+#nltk
 import nltk
+from nltk.corpus import stopwords 
 from nltk import word_tokenize, sent_tokenize
 from nltk.stem import WordNetLemmatizer
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
+#io
 import io
 from io import StringIO
-from nltk.corpus import stopwords 
-from string import punctuation
+#googletrans
 from googletrans import Translator
 
 #TITLE AND DESCRIPTION
@@ -54,35 +56,20 @@ elif option == 'url':
     with st.expander("Please click here to see the full text"):
         st.write(text)
     
-# PROCESSING
-# define punctuation
-# puncts = punctuation
-# puncts_list = [ s for s in puncts ]
-#st.write( puncts_list )
-
-
+#PROCESSES
 #define stopwords
 unwanted_words_list = stopwords.words('english')
-unwanted_words_list_upper = [word.upper() for word in unwanted_words_list]
-#st.write( unwanted_words_list_upper)
-
-
-#update unwanted_words_list
-#unwanted_words_list.extend(puncts_list)
-#st.write(unwanted_words_list)
+#st.write( unwanted_words_list)
 
 #tokenize
-tokens = word_tokenize(clean_text)
-st.write(tokens)
-st.write(type(tokens))
-#token_list = [ token for token in tokens if token not in unwanted_words_list_upper]
-#st.write(token_list)
+tok = word_tokenize(clean_text)
+#st.write(tok)
+#tokens = [ token for token in tok if token not in unwanted_words_list]
+#st.write(tokens)
 
-no_double = set(token_list)
+no_double = set(tokens)
+no_double_list = list(no_double)
 #st.write(no_double)
-
-no_double_list = [word for word in no_double]
-#st.write(no_double_list)
 
 final_list = [word for word in no_double_list if len(word) >= 3]
 st.write(final_list)
