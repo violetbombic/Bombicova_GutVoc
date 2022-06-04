@@ -71,7 +71,8 @@ unwanted_words_list_upper = [word.upper() for word in unwanted_words_list]
 
 #tokenize
 tokens = word_tokenize(clean_text)
-token_list = [ token for token in tokens if token not in unwanted_words_list_upper]
+st.write(tokens)
+#token_list = [ token for token in tokens if token not in unwanted_words_list_upper]
 #st.write(token_list)
 
 no_double = set(token_list)
@@ -99,7 +100,7 @@ lemma = []
 for token in final_list:
     lem = lemmatizer.lemmatize(token)
     lemma.append(lem)
-st.write(lemma)
+#st.write(lemma)
 
 
 
