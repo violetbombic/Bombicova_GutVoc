@@ -74,6 +74,25 @@ no_double_list = list(no_double)
 final_list = [word for word in no_double_list if len(word) >= 3]
 st.write(final_list)
 
+#lemmatization
+lemmatizer = WordNetLemmatizer()
+lemma = []
+for token in final_list:
+    lem = lemmatizer.lemmatize(token)
+    lemma.append(lem)
+st.write(lemma)
+
+
+#Words translation
+dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
+translator = Translator()
+translation = []
+for word in final_list[0]:
+    translword = translator.translate(word, dest)
+    translation.append(translword.text)
+st.write(translation)
+
+
 #pronunciation
 pron = []
 for token in final_list:
@@ -96,23 +115,7 @@ st.write(pos_tags)
 
 
 
-# Words translation
-#dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
-# translator = Translator()
-# translation = []
-# for word in final_list[0]:
-#     translword = translator.translate(word, dest='sk')
-#     translation.append(translword.text)
-# st.write(translation)
 
-
-#lemmatization
-lemmatizer = WordNetLemmatizer()
-lemma = []
-for token in final_list:
-    lem = lemmatizer.lemmatize(token)
-    lemma.append(lem)
-st.write(lemma)
 
 
 
