@@ -90,7 +90,7 @@ lemma = []
 for token in final_list:
     lem = lemmatizer.lemmatize(token)
     lemma.append(lem)
-#st.write(lemma)
+st.write(lemma)
 
 
 
