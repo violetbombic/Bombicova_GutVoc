@@ -1,6 +1,6 @@
 #IMPORTS AND DOWNLOADS
 import streamlit as st
-import requests
+import json, requests
 import re
 #nltk
 import nltk
@@ -73,6 +73,17 @@ no_double_list = list(no_double)
 
 final_list = [word for word in no_double_list if len(word) >= 3]
 st.write(final_list)
+
+#pronunciation
+pron = []
+for token in tokens:
+    url = 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=r&ipa=1'
+    response = requests.get(url)
+    dataFromDatamuse = json.loads(response.text)
+    pronunciation = dataFromDatamuse[0]['tags'][-1]
+    pron.append(pronunciation) 
+st.write(pron)
+
 
 # Words translation
 #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
