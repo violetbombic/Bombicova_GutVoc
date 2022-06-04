@@ -84,6 +84,17 @@ for token in final_list:
     pron.append(pronunciation) 
 st.write(pron)
 
+#pos-tag
+pos_tags = []
+for token in final_list:
+    url= 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=p'
+    response = requests.get(url)
+    dataFromDatamuse = json.loads(response.text)
+    pronunciation = dataFromDatamuse[0]['tags'][-1]
+    pos_tags.append(pronunciation)
+st.write(pos_tags)
+
+
 
 # Words translation
 #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
