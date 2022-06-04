@@ -64,7 +64,7 @@ unwanted_words_list = stopwords.words('english')
 #tokenize
 tok = word_tokenize(clean_text)
 #st.write(tok)
-#tokens = [ token for token in tok if token not in unwanted_words_list]
+tokens = [ token for token in tok if token not in unwanted_words_list]
 #st.write(tokens)
 
 no_double = set(tokens)
