@@ -35,7 +35,7 @@ if option == 'Text file':
         end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
         text = text[start_:end_]
         clean_text=re.sub("([^A-Za-z])"," ",text).upper()
-        clean_text = str(clean_text)
+        clean_text = str(clean_text[:100])
         #st.write(clean_text)
         st.subheader("Here is your text: ")
         with st.expander("Please click here to see the full text"):
