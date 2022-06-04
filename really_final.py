@@ -87,8 +87,8 @@ st.write(lemma)
 dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
 translator = Translator()
 translation = []
-for word in final_list[0]:
-    translword = translator.translate(word, dest)
+for token in final_list:
+    translword = translator.translate(token, dest)
     translation.append(translword.text)
 st.write(translation)
 
