@@ -20,7 +20,7 @@ from googletrans import Translator
 import pandas as pd
 
 #TITLE AND DESCRIPTION
-st.title("Project_Name")
+st.title("GutVoc")
 user_name = st.text_input("Hello! What is you name?")
 st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
 
@@ -117,18 +117,19 @@ for token in final_list:
 st.write(pos_tags)
 
 df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
-df = df.sort_values("Word")
+df1 = df.sort_values("Word")
 #st.write(df)
 
+#OUTPUT
 st.subheader("Now you can dowload your Vocabulary!")
 
 @st.cache
-def convert_df(df):
+def convert_df(df1):
    return df.to_csv().encode('utf-8')
 
 csv = convert_df(df)
 
-st.download_button('Click here to dowload it',csv.sort_values("Word"), "your_vocabulary.csv","text/csv",key='download-csv')
+st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
 
 
