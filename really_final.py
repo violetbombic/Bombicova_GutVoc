@@ -128,7 +128,7 @@ def convert_df(df):
 
 csv = convert_df(df)
 
-st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
+st.download_button('Click here to dowload it',csv.sort_values("Word"), "your_vocabulary.csv","text/csv",key='download-csv')
 
 
 
