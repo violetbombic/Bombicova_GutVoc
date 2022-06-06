@@ -16,6 +16,8 @@ import io
 from io import StringIO
 #googletrans
 from googletrans import Translator
+#pandas
+import pandas as pd
 
 #TITLE AND DESCRIPTION
 st.title("Project_Name")
@@ -113,7 +115,8 @@ for token in final_list:
     pos_tags.append(pronunciation)
 st.write(pos_tags)
 
-
+df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "Pron": pron, "Pos-tag": pos_tag})
+st.write(df)
 
 
 
