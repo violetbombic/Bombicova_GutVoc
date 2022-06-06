@@ -42,6 +42,68 @@ if option == 'Text file':
         st.subheader("Here is your text: ")
         with st.expander("Please click here to see the full text"):
             st.write(text)
+            
+        #PROCESSES
+        #define stopwords
+        unwanted_words_list = stopwords.words('english')
+        #st.write( unwanted_words_list)
+
+        #tokenize
+        tok = word_tokenize(clean_text)
+        #st.write(tok)
+        tokens = [ token for token in tok if token not in unwanted_words_list]
+        #st.write(tokens)
+
+        no_double = set(tokens)
+        no_double_list = list(no_double)
+        #st.write(no_double)
+
+        final_list = [word for word in no_double_list if len(word) >= 3]
+        st.write(final_list)
+
+        #lemmatization
+        lemmatizer = WordNetLemmatizer()
+        lemma = []
+        for token in final_list:
+            lem = lemmatizer.lemmatize(token)
+            lemma.append(lem)
+        st.write(lemma)
+
+
+# #Words translation
+# #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
+# translator = Translator()
+# translation = []
+# for token in final_list:
+#     translword = translator.translate(token, dest='sk')
+#     translation.append(translword.text)
+# st.write(translation)
+
+
+        #pronunciation
+        pron = []
+        for token in final_list:
+            url = 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=r&ipa=1'
+            response = requests.get(url)
+            dataFromDatamuse = json.loads(response.text)
+            datamuse_data = dataFromDatamuse[0]['tags'][-1]
+            pronunciation = re.sub("ipa_pron:"," ",datamuse_data)
+            pron.append(pronunciation) 
+        st.write(pron)
+
+        #pos-tag
+        pos_tags = []
+        for token in final_list:
+            url= 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=p'
+            response = requests.get(url)
+            dataFromDatamuse = json.loads(response.text)
+            pronunciation = dataFromDatamuse[0]['tags'][-1]
+            pos_tags.append(pronunciation)
+        st.write(pos_tags)
+
+        df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
+        df1 = df.sort_values("Word")
+        #st.write(df)
         
 elif option == 'url':
     url_input = st.text_input("Please insert an url")
