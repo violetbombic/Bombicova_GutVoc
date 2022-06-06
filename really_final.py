@@ -118,17 +118,17 @@ st.write(pos_tags)
 
 df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
 df = df.sort_values("Word")
-st.write(df)
+#st.write(df)
 
-# st.subheader("Now you can dowload your Vocabulary!")
+st.subheader("Now you can dowload your Vocabulary!")
 
-# @st.cache
-# def convert_df(df):
-#    return df.to_csv().encode('utf-8')
+@st.cache
+def convert_df(df):
+   return df.to_csv().encode('utf-8')
 
-# csv = convert_df(df)
+csv = convert_df(df)
 
-# st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
+st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
 
 
