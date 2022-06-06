@@ -101,7 +101,8 @@ for token in final_list:
     url = 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=r&ipa=1'
     response = requests.get(url)
     dataFromDatamuse = json.loads(response.text)
-    pronunciation = dataFromDatamuse[0]['tags'][-1]
+    datamuse_data = dataFromDatamuse[0]['tags'][-1]
+    pronunciation = re.sub("ipa_pron:"," ",datamuse_data)
     pron.append(pronunciation) 
 st.write(pron)
 
