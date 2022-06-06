@@ -115,7 +115,7 @@ for token in final_list:
     pos_tags.append(pronunciation)
 st.write(pos_tags)
 
-df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "Pron": pron, "Pos-tag": pos_tag})
+df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "Pron": pron, "Pos-tag": pos_tags})
 st.write(df)
 
 
