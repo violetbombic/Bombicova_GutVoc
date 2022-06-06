@@ -116,10 +116,11 @@ for token in final_list:
     pos_tags.append(pronunciation)
 st.write(pos_tags)
 
-df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "Pron": pron, "Pos-tag": pos_tags})
-st.write(df)
+df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
+#st.write(df)
 
-
+st.subheader("Now you can dowload your Vocabulary!")
+st.download_button('Click here to dowload it', df, file_name='your_table.csv')
 
 
 
