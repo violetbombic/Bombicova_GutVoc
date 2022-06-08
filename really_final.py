@@ -18,6 +18,12 @@ from io import StringIO
 from googletrans import Translator
 #pandas
 import pandas as pd
+#image
+from PIL import Image
+
+#IMAGE
+img ='https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary' 
+st.image(img)
 
 #TITLE AND DESCRIPTION
 st.title("GutVoc")
