@@ -40,7 +40,7 @@ with st.expander("Instructions for use. Please click here > "):
      st.write("""
      - Go to https://gutenberg.org/, 
      - choose a book that interests you, 
-     - now you have two options: in case you have dowloaded the book, upload a file; otherwise find Plain Text UTF-8 format and insert an URL,
+     - now you have two options: in case you have dowloaded the book, upload a file; otherwise find Plain Text UTF-8 format and insert an URL, for example: https://gutenberg.org/cache/epub/68261/pg68261.txt,
      - choose the language into which you want to translate the words,
      - wait a minute :)
      - dowload the vocabulary and wordcloud. 
@@ -200,7 +200,9 @@ plt.axis("off")
 plt.tight_layout(pad = 0)
  
 #fig = plt.show()
-st.pyplot()
+wcloud = st.pyplot()
+
+st.download_button('Download your corrected text', wcloud, file_name='word_cloud.jpg')
 
 st.markdown("""---""")
 
