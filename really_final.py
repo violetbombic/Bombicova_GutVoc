@@ -120,6 +120,7 @@ st.write(pos_tags)
 df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
 df1 = df.sort_values("Word")
 #st.write(df)
+st.dataframe(df1)
 
 #OUTPUT
 st.subheader("Now you can dowload your Vocabulary!")
