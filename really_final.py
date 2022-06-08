@@ -132,7 +132,4 @@ csv = convert_df(df)
 
 st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
-with st.spinner('Wait for it...'):
-    time.sleep(5)
-st.success('Done!')
-
+st.balloons()
