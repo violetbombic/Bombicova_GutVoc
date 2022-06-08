@@ -147,6 +147,6 @@ st.markdown("""---""")
 st.write("Sources:")
 st.write(""" - Image: https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary
 """)
-st.write("""Documentation: https://docs.streamlit.io/
+st.write(""" - Documentation: https://docs.streamlit.io/
 """)
  
