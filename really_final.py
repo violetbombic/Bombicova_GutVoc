@@ -165,7 +165,7 @@ wordcloud = WordCloud(width = 800, height = 800,
                 stopwords = stopwords,
                 min_font_size = 10).generate(comment_words)
  
-                    
+st.set_option('deprecation.showPyplotGlobalUse', False)                    
 plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud)
 plt.axis("off")
