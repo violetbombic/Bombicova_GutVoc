@@ -203,7 +203,7 @@ plt.tight_layout(pad = 0)
 wcloud = st.pyplot()
 
 
-st.download_button('Download your corrected text', wcloud, file_name='word_cloud.png')
+#st.download_button('Download your corrected text', wcloud, file_name='word_cloud.png')
 
 st.markdown("""---""")
 
