@@ -2,3 +2,4 @@ nltk
 requests
 googletrans
 pandas
+click<=8.0.4
