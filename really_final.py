@@ -47,38 +47,40 @@ with st.expander("Instructions for use. Please click here > "):
      """) 
 
 #INPUT
-option = st.selectbox("What type of file you want to upload?", ('Text file', 'url'))
+st.subheader("What type of file you want to upload?")
+option = st.selectbox("Please, select an option.", ('Text file', 'url'))
 if option == 'Text file':
-    uploaded_file = st.file_uploader("Please choose a file")
-    if uploaded_file is not None:
-        stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-        string_data = stringio.read()
-        text = string_data
-        start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
-        end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
-        text = text[start_:end_]
-        clean_text=re.sub("([^A-Za-z])"," ",text).upper()
-        clean_text = str(clean_text[:500])
-        #st.write(clean_text)
-        st.subheader("Here is your text: ")
-        with st.expander("Please click here to see the full text"):
-            st.write(text)
+     st.subheader("File selection")
+     uploaded_file = st.file_uploader("Please choose a file")
+     if uploaded_file is not None:
+          stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+          string_data = stringio.read()
+          text = string_data
+          start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
+          end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
+          text = text[start_:end_]
+          clean_text=re.sub("([^A-Za-z])"," ",text).upper()
+          clean_text = str(clean_text[:500])
+          #st.write(clean_text)
+          st.subheader("Here is your text: ")
+          with st.expander("Please click here to see the full text"):
+               st.write(text)
             
      
 elif option == 'url':
-    url_input = st.text_input("Please insert an url")
-    response = requests.get(url_input)
-    response.encoding = "utf-8"
-    text = response.text
-    start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
-    end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
-    text = text[start_:end_]
-    clean_text=re.sub("([^A-Za-z])"," ",text).upper()
-    clean_text = str(clean_text[:500])
-    #st.write(clean_text)       
-    st.subheader("Here is your text: ")
-    with st.expander("Please click here to see the full text"):
-        st.write(text)
+     url_input = st.text_input("Please insert an url")
+     response = requests.get(url_input)
+     response.encoding = "utf-8"
+     text = response.text
+     start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
+     end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
+     text = text[start_:end_]
+     clean_text=re.sub("([^A-Za-z])"," ",text).upper()
+     clean_text = str(clean_text[:500])
+     #st.write(clean_text)       
+     st.subheader("Here is your text: ")
+     with st.expander("Please click here to see the full text"):
+          st.write(text)
     
 #PROCESSES
 #define stopwords
@@ -111,22 +113,22 @@ st.write(lemma)
 st.subheader("Please, choose the language into which you want to translate the words from the text")
 language_option = st.radio(
 "Choose a language from the following:",
-('slovak', 'italian', 'german', 'czech', 'urdu'))
+('Slovak', 'Italian', 'German', 'Czech', 'Urdu'))
 st.write('You selected:', language_option)
 
-lang = ' '
-if language_option.lower() == 'slovak':
-    lang = 'sk'
-elif language_option.lower() == 'italian':
-    lang = 'it'
-elif language_option.lower() == 'german':
-    lang = 'de'
-elif language_option.lower() == 'czech':
-    lang = 'cz'
-elif language_option.lower() == 'urdu':
-    lang = 'ur'
-else:
-    pass
+# lang = ' '
+# if language_option.lower() == 'Slovak':
+#     lang = 'sk'
+# elif language_option.lower() == 'Italian':
+#     lang = 'it'
+# elif language_option.lower() == 'German':
+#     lang = 'de'
+# elif language_option.lower() == 'Czech':
+#     lang = 'cz'
+# elif language_option.lower() == 'Urdu':
+#     lang = 'ur'
+# else:
+#     pass
 
 # #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
 translator = Translator()
