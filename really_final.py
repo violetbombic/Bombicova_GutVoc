@@ -116,27 +116,26 @@ language_option = st.radio(
 ('Slovak', 'Italian', 'German', 'Czech', 'Urdu'))
 st.write('You selected:', language_option)
 
-lang = ' '
-if language_option.lower() == 'Slovak':
-    lang = 'sk'
-elif language_option.lower() == 'Italian':
-    lang = 'it'
-elif language_option.lower() == 'German':
-    lang = 'de'
-elif language_option.lower() == 'Czech':
-    lang = 'cz'
-elif language_option.lower() == 'Urdu':
-    lang = 'ur'
-else:
-    pass
+# lang = ' '
+# if language_option.lower() == 'Slovak':
+#     lang = 'sk'
+# elif language_option.lower() == 'Italian':
+#     lang = 'it'
+# elif language_option.lower() == 'German':
+#     lang = 'de'
+# elif language_option.lower() == 'Czech':
+#     lang = 'cz'
+# elif language_option.lower() == 'Urdu':
+#     lang = 'ur'
+# else:
+#     pass
 
-# #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
-translator = Translator()
-translation = []
-for token in final_list:
-    translword = translator.translate(token, lang)
-    translation.append(translword.text)
-st.write(translation)
+# translator = Translator()
+# translation = []
+# for token in final_list:
+#     translword = translator.translate(token, dest=lang)
+#     translation.append(translword.text)
+# st.write(translation)
 
 
 #pronunciation
