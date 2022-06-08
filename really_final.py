@@ -153,7 +153,7 @@ st.balloons()
 comment_words = ''
 stopwords = set(STOPWORDS)
  
-for val in df.CONTENT:
+for val in df1.CONTENT:
     val = str(val)
     slova = val.split()
     for i in range(len(slova)):
