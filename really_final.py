@@ -27,17 +27,24 @@ import matplotlib.pyplot as plt
 
 #TITLE
 st.title("GutVoc")
+st.write("A project by Violeta Bombicova, for the course of Computer Programing, MS Applied Linguistics, at unibz, Brixen, Italy")
 
 #IMAGE
 img = 'https://aretepiattaforma.it/pluginfile.php/1/local_simplified_news/newscontent/255/Project%20Gutenberg.jpg'
-#img ='https://educationsupporthub.co.uk/wp-content/uploads/2020/09/vocabulary-1536x1024.jpg' 
 st.image(img)
 
 #DESCRIPTION
-
-# user_name = st.text_input("Hello! What is you name?")
 # st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
 
+with st.expander("Instructions for use. Please click here > "):
+     st.write("""
+     - Go to https://gutenberg.org/, 
+     - choose a book that interests you, 
+     - now you have two options: in case you have dowloaded the book, upload a file; otherwise find Plain Text UTF-8 format and insert an URL,
+     - choose the language into which you want to translate the words,
+     - wait a minute :)
+     - dowload the vocabulary and wordcloud. 
+     """) 
 
 #INPUT
 option = st.selectbox("What type of file you want to upload?", ('Text file', 'url'))
@@ -101,13 +108,33 @@ st.write(lemma)
 
 
 # #Words translation
+st.subheader("Please, choose the language into which you want to translate the words from the text")
+language_option = st.radio(
+"Choose a language from the following:",
+('slovak', 'italian', 'german', 'czech', 'urdu'))
+st.write('You selected:', language_option)
+
+lang = ' '
+if language_option.lower() == 'slovak':
+    lang = 'sk'
+elif language_option.lower() == 'italian':
+    lang = 'it'
+elif language_option.lower() == 'german':
+    lang = 'de'
+elif language_option.lower() == 'czech':
+    lang = 'cz'
+elif language_option.lower() == 'urdu':
+    lang = 'ur'
+else:
+    pass
+
 # #dest = st.text_input('Please choose a language for translation: (for example en, sk, it, de, ur...) ')
-# translator = Translator()
-# translation = []
-# for token in final_list:
-#     translword = translator.translate(token, dest='sk')
-#     translation.append(translword.text)
-# st.write(translation)
+translator = Translator()
+translation = []
+for token in final_list:
+    translword = translator.translate(token, dest= lang)
+    translation.append(translword.text)
+st.write(translation)
 
 
 #pronunciation
@@ -171,13 +198,13 @@ plt.imshow(wordcloud)
 plt.axis("off")
 plt.tight_layout(pad = 0)
  
-fig = plt.show()
-st.pyplot(fig)
+#fig = plt.show()
+st.pyplot()
 
 st.markdown("""---""")
 
 #SOURCES
 with st. expander("Sources:"):
     st.write(""" - Image: https://aretepiattaforma.it/news/255/Project-Gutenberg-e-digitalizzazione-del-sapere #https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary """)
-    st.write(""" - Documentation: https://docs.streamlit.io/ """)
+    st.write(""" - Tutorials: https://docs.streamlit.io/ , https://www.geeksforgeeks.org/generating-word-cloud-python/""")
  
