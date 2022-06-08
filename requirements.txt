@@ -3,3 +3,5 @@ requests
 googletrans
 pandas
 click<=8.0.4
+matplotlib
+wordcloud
