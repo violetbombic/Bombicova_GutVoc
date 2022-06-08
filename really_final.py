@@ -22,7 +22,7 @@ import pandas as pd
 from PIL import Image
 
 #IMAGE
-img ='https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary' 
+img ='https://educationsupporthub.co.uk/wp-content/uploads/2020/09/vocabulary-1536x1024.jpg' 
 st.image(img)
 
 #TITLE AND DESCRIPTION
