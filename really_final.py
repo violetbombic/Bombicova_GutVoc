@@ -171,8 +171,8 @@ plt.imshow(wordcloud)
 plt.axis("off")
 plt.tight_layout(pad = 0)
  
-#plt.show()
-st.pyplot()
+fig = plt.show()
+st.pyplot(fig)
 
 st.markdown("""---""")
 
