@@ -134,7 +134,7 @@ else:
 translator = Translator()
 translation = []
 for token in final_list:
-    translword = translator.translate(token, dest= lang)
+    translword = translator.translate(token, lang)
     translation.append(translword.text)
 st.write(translation)
 
