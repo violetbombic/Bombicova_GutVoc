@@ -25,7 +25,8 @@ from PIL import Image
 st.title("GutVoc")
 
 #IMAGE
-img ='https://educationsupporthub.co.uk/wp-content/uploads/2020/09/vocabulary-1536x1024.jpg' 
+img = 'https://aretepiattaforma.it/pluginfile.php/1/local_simplified_news/newscontent/255/Project%20Gutenberg.jpg'
+#img ='https://educationsupporthub.co.uk/wp-content/uploads/2020/09/vocabulary-1536x1024.jpg' 
 st.image(img)
 
 #DESCRIPTION
