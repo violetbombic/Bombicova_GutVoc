@@ -141,3 +141,12 @@ csv = convert_df(df)
 st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
 st.balloons()
+
+st.markdown("""---""")
+
+st.write("Sources:")
+st.write(""" - Image: https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary
+""")
+st.write("""Documentation: https://docs.streamlit.io/
+""")
+ 
