@@ -20,6 +20,10 @@ from googletrans import Translator
 import pandas as pd
 #image
 from PIL import Image
+#wordcloud
+from wordcloud import WordCloud, STOPWORDS
+#matplotlib
+import matplotlib.pyplot as plt
 
 #TITLE
 st.title("GutVoc")
@@ -145,6 +149,29 @@ csv = convert_df(df)
 st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
 st.balloons()
+
+comment_words = ''
+stopwords = set(STOPWORDS)
+ 
+for val in df.CONTENT:
+    val = str(val)
+    slova = val.split()
+    for i in range(len(slova)):
+        slova[i] = slova[i].lower()
+    comment_words += " ".join(slova)+" "
+ 
+wordcloud = WordCloud(width = 800, height = 800,
+                background_color ='white',
+                stopwords = stopwords,
+                min_font_size = 10).generate(comment_words)
+ 
+                    
+plt.figure(figsize = (8, 8), facecolor = None)
+plt.imshow(wordcloud)
+plt.axis("off")
+plt.tight_layout(pad = 0)
+ 
+plt.show()
 
 st.markdown("""---""")
 
