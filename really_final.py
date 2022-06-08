@@ -30,9 +30,9 @@ img = 'https://aretepiattaforma.it/pluginfile.php/1/local_simplified_news/newsco
 st.image(img)
 
 #DESCRIPTION
-st.title("GutVoc")
-user_name = st.text_input("Hello! What is you name?")
-st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
+
+# user_name = st.text_input("Hello! What is you name?")
+# st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
 
 
 #INPUT
@@ -150,8 +150,6 @@ st.markdown("""---""")
 
 #SOURCES
 st.write("Sources:")
-st.write(""" - Image: https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary
-""")
-st.write(""" - Documentation: https://docs.streamlit.io/
-""")
+st.write(""" - Image: https://aretepiattaforma.it/news/255/Project-Gutenberg-e-digitalizzazione-del-sapere #https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary """)
+st.write(""" - Documentation: https://docs.streamlit.io/ """)
  
