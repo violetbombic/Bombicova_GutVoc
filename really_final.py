@@ -119,8 +119,9 @@ st.write(pos_tags)
 
 df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
 df1 = df.sort_values("Word")
+df2 = df1.reset_index(inplace = True) 
 #st.write(df)
-st.dataframe(df1)
+st.dataframe(df2)
 
 #OUTPUT
 st.subheader("Now you can dowload your Vocabulary!")
