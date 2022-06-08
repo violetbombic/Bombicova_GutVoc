@@ -34,7 +34,9 @@ img = 'https://aretepiattaforma.it/pluginfile.php/1/local_simplified_news/newsco
 st.image(img)
 
 #DESCRIPTION
-# st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
+# st.write("""You're learning English and you've decided to read books from the Gutenberg digital library. 
+However, you don't understand some of the words and you don't have time to translate word by word. Here's a solution for you. 
+Just a few clicks and you get your vocabulary, that you can download and print. """)
 
 with st.expander("Instructions for use. Please click here > "):
      st.write("""
