@@ -21,11 +21,14 @@ import pandas as pd
 #image
 from PIL import Image
 
+#TITLE
+st.title("GutVoc")
+
 #IMAGE
 img ='https://educationsupporthub.co.uk/wp-content/uploads/2020/09/vocabulary-1536x1024.jpg' 
 st.image(img)
 
-#TITLE AND DESCRIPTION
+#DESCRIPTION
 st.title("GutVoc")
 user_name = st.text_input("Hello! What is you name?")
 st.write("Welcome!", user_name, "ldjhakjshkjahfkjshfkjshfjs")
@@ -138,12 +141,13 @@ def convert_df(df1):
 
 csv = convert_df(df)
 
-st.download_button('Click here to dowload it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
+st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
 st.balloons()
 
 st.markdown("""---""")
 
+#SOURCES
 st.write("Sources:")
 st.write(""" - Image: https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary
 """)
