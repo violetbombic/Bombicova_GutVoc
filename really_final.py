@@ -149,7 +149,7 @@ st.balloons()
 st.markdown("""---""")
 
 #SOURCES
-with st. expander("Sources:")
+with st. expander("Sources:"):
 st.write(""" - Image: https://aretepiattaforma.it/news/255/Project-Gutenberg-e-digitalizzazione-del-sapere #https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary """)
 st.write(""" - Documentation: https://docs.streamlit.io/ """)
  
