@@ -138,9 +138,10 @@ if ready2go is True:
           pass
 
      translator = Translator()
-     translation = []
+     #translation = []
      
      if lang is not ' ':
+          translation = []
           for word in final_list:
                translword = translator.translate(word, lang)
                translation.append(translword.text)
