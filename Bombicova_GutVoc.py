@@ -180,7 +180,7 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
-          return df.to_excel('pandas_to_excel.xlsx', sheet_name='new_sheet_name').encode('utf-8')  #df.to_excel('pandas_to_excel.xlsx', sheet_name='new_sheet_name')
+          return df.to_excel('pandas_to_excel.xlsx', sheet_name='new_sheet_name')  #df.to_csv().encode('utf-8')
 
 
      csv = convert_df(df1)
