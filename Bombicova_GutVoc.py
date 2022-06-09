@@ -102,7 +102,7 @@ if ready2go is True:
      #st.write(no_double)
 
      final_list = [word for word in no_double_list if len(word) >= 3]
-     st.write(final_list)
+     #st.write(final_list)
 
      #lemmatization
      lemmatizer = WordNetLemmatizer()
@@ -110,7 +110,7 @@ if ready2go is True:
      for token in final_list:
           lem = lemmatizer.lemmatize(token)
           lemma.append(lem)
-     st.write(lemma)
+     #st.write(lemma)
 
 
      # #Words translation
@@ -138,10 +138,11 @@ if ready2go is True:
      translation = []
      
      if lang is not ' ':
-          for token in final_list:
-               translword = translator.translate(token, dest=lang)
+          for t in final_list:
+               translword = translator.translate(t, dest=lang)
                translation.append(translword.text)
           st.write(translation)
+          st.write(len(translation))
 
 
      #pronunciation
