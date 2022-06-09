@@ -61,7 +61,7 @@ if option == 'Text file':
           end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
           text = text[start_:end_]
           clean_text=re.sub("([^A-Za-z])"," ",text).upper()
-          clean_text = str(clean_text[:1000])
+          clean_text = str(clean_text[:500])
           #st.write(clean_text)
           st.subheader("Here is your text: ")
           with st.expander("Please click here to see the full text"):
@@ -78,7 +78,7 @@ elif option == 'url':
      end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
      text = text[start_:end_]
      clean_text=re.sub("([^A-Za-z])"," ",text).upper()
-     clean_text = str(clean_text[:1000])
+     clean_text = str(clean_text[:500])
      #st.write(clean_text)       
      st.subheader("Here is your text: ")
      with st.expander("Please click here to see the full text"):
@@ -141,8 +141,8 @@ if ready2go is True:
           for t in final_list:
                translword = translator.translate(t, dest=lang)
                translation.append(translword.text)
-          #st.write(translation)
-          st.write(len(translation))
+          st.write(translation)
+          #st.write(len(translation))
 
 
      #pronunciation
