@@ -165,7 +165,7 @@ if ready2go is True:
           pos_tags.append(pronunciation)
      st.write(pos_tags)
 
-     df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
+     df = pd.DataFrame({"Word" : final_list, "Translation":translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
      df1 = df.sort_values("Word")
      #df2 = df1.reset_index(inplace = True) 
      #st.write(df)
