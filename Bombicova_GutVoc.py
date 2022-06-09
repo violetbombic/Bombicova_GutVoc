@@ -210,5 +210,5 @@ st.markdown("""---""")
 #SOURCES
 with st. expander("Sources:"):
     st.write(""" - Image: https://aretepiattaforma.it/news/255/Project-Gutenberg-e-digitalizzazione-del-sapere #https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary """)
-    st.write(""" - Tutorials: https://docs.streamlit.io/ , https://www.geeksforgeeks.org/generating-word-cloud-python/""")
+    st.write(""" - Tutorials: https://docs.streamlit.io/ , https://www.geeksforgeeks.org/generating-word-cloud-python/, https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv, https://docs.streamlit.io/library/api-reference/widgets/st.file_uploader""")
  
