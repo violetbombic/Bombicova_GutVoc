@@ -120,29 +120,29 @@ if ready2go is True:
      ('Slovak', 'Italian', 'German', 'Czech', 'Urdu'))
      #st.write('You selected:', language_option)
 
-#      lang = ' '
-#      if language_option.lower() == 'Slovak':
-#           lang = 'sk'
-#      elif language_option.lower() == 'Italian':
-#           lang = 'it'
-#      elif language_option.lower() == 'German':
-#           lang = 'de'
-#      elif language_option.lower() == 'Czech':
-#           lang = 'cz'
-#      elif language_option.lower() == 'Urdu':
-#           lang = 'ur'
-#      else:
-#           pass
+     lang = ' '
+     if language_option.lower() == 'Slovak':
+          lang = 'sk'
+     elif language_option.lower() == 'Italian':
+          lang = 'it'
+     elif language_option.lower() == 'German':
+          lang = 'de'
+     elif language_option.lower() == 'Czech':
+          lang = 'cz'
+     elif language_option.lower() == 'Urdu':
+          lang = 'ur'
+     else:
+          pass
 
-#      translator = Translator()
-#      translation = []
+     translator = Translator()
+     translation = []
      
-#      if lang is not ' ':
-#           for t in final_list:
-#                translword = translator.translate(t, dest=lang)
-#                translation.append(translword.text)
-#           st.write(translation)
-#           st.write(len(translation))
+     if lang is not ' ':
+          for t in final_list:
+               translword = translator.translate(t, dest=lang)
+               translation.append(translword.text)
+          st.write(translation)
+          st.write(len(translation))
 
 
      #pronunciation
@@ -177,7 +177,7 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
-          return df.to_csv().encode('utf-8')
+          return df.to_excel().encode('utf-8')
 
      csv = convert_df(df)
 
