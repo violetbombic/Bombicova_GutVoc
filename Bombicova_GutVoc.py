@@ -27,6 +27,8 @@ import matplotlib.pyplot as plt
 #openpyxl
 import openpyxl
 
+lemmatizer = WordNetLemmatizer()
+translator = Translator()
 
 #TITLE
 st.title("GutVoc")
