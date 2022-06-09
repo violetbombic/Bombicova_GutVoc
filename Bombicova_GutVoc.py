@@ -99,7 +99,7 @@ if ready2go is True:
 
      no_double = set(tokens)
      no_double_list = list(no_double)
-     #st.write(no_double)
+     #st.write(no_double_liste)
 
      final_list = [word for word in no_double_list if len(word) >= 3]
      st.write(final_list)
@@ -182,7 +182,7 @@ if ready2go is True:
      csv = convert_df(df1)
 
      st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
-     st.write(csv)
+     
      
      st.balloons()
 
