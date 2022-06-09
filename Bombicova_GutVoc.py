@@ -24,6 +24,9 @@ from PIL import Image
 from wordcloud import WordCloud, STOPWORDS
 #matplotlib
 import matplotlib.pyplot as plt
+#openpyxl
+import openpyxl
+
 
 #TITLE
 st.title("GutVoc")
@@ -177,7 +180,8 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
-          return df.to_csv().encode('utf-8')
+          return df.to_excel('pandas_to_excel.xlsx', sheet_name='new_sheet_name').encode('utf-8')  #df.to_excel('pandas_to_excel.xlsx', sheet_name='new_sheet_name')
+
 
      csv = convert_df(df1)
 
