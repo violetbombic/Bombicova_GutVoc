@@ -108,7 +108,7 @@ if ready2go is True:
      lemmatizer = WordNetLemmatizer()
      lemma = []
      for word in final_list:
-          lem = lemmatizer.lemmatize(token)
+          lem = lemmatizer.lemmatize(word)
           lemma.append(lem)
      st.write(lemma)
 
