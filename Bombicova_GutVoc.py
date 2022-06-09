@@ -182,7 +182,7 @@ if ready2go is True:
      csv = convert_df(df1)
 
      st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
-     st.dataframe(csv)
+     st.write(csv)
      
      st.balloons()
 
