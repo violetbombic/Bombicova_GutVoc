@@ -190,7 +190,7 @@ if ready2go is True:
  
      for val in df1.iloc[:, 0]:
           val = str(val)
-          slova = val.split()e
+          slova = val.split()
           for i in range(len(slova)):
                slova[i] = slova[i].lower()
           comment_words += " ".join(slova)+" "
