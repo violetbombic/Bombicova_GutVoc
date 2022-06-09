@@ -139,7 +139,7 @@ if ready2go is True:
      
      if lang is not ' ':
           for word in final_list:
-               translword = translator.translate(word, dest=lang)
+               translword = translator.translate(word, lang)
                translation.append(translword.text)
           st.write(translation)
           st.write(len(translation))
