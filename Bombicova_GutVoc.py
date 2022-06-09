@@ -141,7 +141,7 @@ if ready2go is True:
           for token in final_list:
                translword = translator.translate(token, dest=lang)
                translation.append(translword.text)
-     st.write(translation)
+          st.write(translation)
 
 
      #pronunciation
