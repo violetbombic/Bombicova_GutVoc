@@ -107,7 +107,7 @@ if ready2go is True:
      #lemmatization
      lemmatizer = WordNetLemmatizer()
      lemma = []
-     for token in final_list:
+     for word in final_list:
           lem = lemmatizer.lemmatize(token)
           lemma.append(lem)
      st.write(lemma)
@@ -138,8 +138,8 @@ if ready2go is True:
      translation = []
      
      if lang is not ' ':
-          for t in final_list:
-               translword = translator.translate(t, dest=lang)
+          for word in final_list:
+               translword = translator.translate(word, dest=lang)
                translation.append(translword.text)
           st.write(translation)
           st.write(len(translation))
@@ -147,8 +147,8 @@ if ready2go is True:
 
      #pronunciation
      pron = []
-     for token in final_list:
-          url = 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=r&ipa=1'
+     for word in final_list:
+          url = 'https://api.datamuse.com/words?sp=' + word + '&qe=sp&md=r&ipa=1'
           response = requests.get(url)
           dataFromDatamuse = json.loads(response.text)
           datamuse_data = dataFromDatamuse[0]['tags'][-1]
@@ -158,8 +158,8 @@ if ready2go is True:
 
      #pos-tag
      pos_tags = []
-     for token in final_list:
-          url= 'https://api.datamuse.com/words?sp=' + token + '&qe=sp&md=p'
+     for word in final_list:
+          url= 'https://api.datamuse.com/words?sp=' + word + '&qe=sp&md=p'
           response = requests.get(url)
           dataFromDatamuse = json.loads(response.text)
           pronunciation = dataFromDatamuse[0]['tags'][-1]
@@ -177,9 +177,9 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
-          return df.to_excel().encode('utf-8')
+          return df.to_csv().encode('utf-8')
 
-     csv = convert_df(df)
+     csv = convert_df(df1)
 
      st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
