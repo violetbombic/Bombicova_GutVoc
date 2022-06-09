@@ -118,7 +118,7 @@ if ready2go is True:
      language_option = st.radio(
      "Choose a language from the following:",
      ('Slovak', 'Italian', 'German', 'Czech', 'Urdu'))
-     st.write('You selected:', language_option)
+     #st.write('You selected:', language_option)
 
      lang = ' '
      if language_option.lower() == 'Slovak':
@@ -141,7 +141,7 @@ if ready2go is True:
           for t in final_list:
                translword = translator.translate(t, dest=lang)
                translation.append(translword.text)
-          st.write(translation)
+          #st.write(translation)
           st.write(len(translation))
 
 
@@ -154,7 +154,7 @@ if ready2go is True:
           datamuse_data = dataFromDatamuse[0]['tags'][-1]
           pronunciation = re.sub("ipa_pron:"," ",datamuse_data)
           pron.append(pronunciation) 
-     st.write(pron)
+     #st.write(pron)
 
      #pos-tag
      pos_tags = []
@@ -164,58 +164,58 @@ if ready2go is True:
           dataFromDatamuse = json.loads(response.text)
           pronunciation = dataFromDatamuse[0]['tags'][-1]
           pos_tags.append(pronunciation)
-     st.write(pos_tags)
+     #st.write(pos_tags)
 
-     df = pd.DataFrame({"Word" : final_list, "Translation":translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
-     df1 = df.sort_values("Word")
-     #df2 = df1.reset_index(inplace = True) 
-     #st.write(df)
-     st.dataframe(df1)
+#      df = pd.DataFrame({"Word" : final_list, "Translation":translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
+#      df1 = df.sort_values("Word")
+#      #df2 = df1.reset_index(inplace = True) 
+#      #st.write(df)
+#      st.dataframe(df1)
 
-     #OUTPUT
-     st.subheader("Now you can dowload your Vocabulary!")
+#      #OUTPUT
+#      st.subheader("Now you can dowload your Vocabulary!")
 
-     @st.cache
-     def convert_df(df1):
-          return df.to_csv().encode('utf-8')
+#      @st.cache
+#      def convert_df(df1):
+#           return df.to_csv().encode('utf-8')
 
-     csv = convert_df(df)
+#      csv = convert_df(df)
 
-     st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
+#      st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
 
-     st.balloons()
+#      st.balloons()
 
-     comment_words = ''
-     stopwords = set(STOPWORDS)
+#      comment_words = ''
+#      stopwords = set(STOPWORDS)
  
-     for val in df1.iloc[:, 0]:
-          val = str(val)
-          slova = val.split()
-          for i in range(len(slova)):
-               slova[i] = slova[i].lower()
-          comment_words += " ".join(slova)+" "
+#      for val in df1.iloc[:, 0]:
+#           val = str(val)
+#           slova = val.split()
+#           for i in range(len(slova)):
+#                slova[i] = slova[i].lower()
+#           comment_words += " ".join(slova)+" "
  
-     wordcloud = WordCloud(width = 800, height = 800,
-                    background_color ='white',
-                    stopwords = stopwords,
-                    min_font_size = 10).generate(comment_words)
+#      wordcloud = WordCloud(width = 800, height = 800,
+#                     background_color ='white',
+#                     stopwords = stopwords,
+#                     min_font_size = 10).generate(comment_words)
  
-     st.set_option('deprecation.showPyplotGlobalUse', False)                    
-     plt.figure(figsize = (8, 8), facecolor = None)
-     plt.imshow(wordcloud)
-     plt.axis("off")
-     plt.tight_layout(pad = 0)
+#      st.set_option('deprecation.showPyplotGlobalUse', False)                    
+#      plt.figure(figsize = (8, 8), facecolor = None)
+#      plt.imshow(wordcloud)
+#      plt.axis("off")
+#      plt.tight_layout(pad = 0)
  
-     #fig = plt.show()
-     wcloud = st.pyplot()
+#      #fig = plt.show()
+#      wcloud = st.pyplot()
 
 
-     #st.download_button('Download your corrected text', wcloud, file_name='word_cloud.png')
+#      #st.download_button('Download your corrected text', wcloud, file_name='word_cloud.png')
 
-     st.markdown("""---""")
+#      st.markdown("""---""")
 
-     #SOURCES
-     with st. expander("Sources:"):
-          st.write(""" - Image: https://aretepiattaforma.it/news/255/Project-Gutenberg-e-digitalizzazione-del-sapere #https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary """)
-          st.write(""" - Tutorials: https://docs.streamlit.io/ , https://www.geeksforgeeks.org/generating-word-cloud-python/, https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv, https://docs.streamlit.io/library/api-reference/widgets/st.file_uploader""")
+#      #SOURCES
+#      with st. expander("Sources:"):
+#           st.write(""" - Image: https://aretepiattaforma.it/news/255/Project-Gutenberg-e-digitalizzazione-del-sapere #https://educationsupporthub.co.uk/news-improving-your-childs-vocabulary """)
+#           st.write(""" - Tutorials: https://docs.streamlit.io/ , https://www.geeksforgeeks.org/generating-word-cloud-python/, https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv, https://docs.streamlit.io/library/api-reference/widgets/st.file_uploader""")
  
