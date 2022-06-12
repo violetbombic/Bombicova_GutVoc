@@ -184,12 +184,12 @@ if ready2go is True:
      st.subheader("Now you can download your Vocabulary!")
 
      @st.cache
-     def convert_df(df1):
-          df1 = df.sort_values(['Word'], ascending=(True))
+     def convert_df(df):
+          df = df.sort_values(['Word'], ascending=(True))
           return df.to_csv() #.encode('utf-8')
 
 
-     csv = convert_df(df1)
+     csv = convert_df(df)
 
      st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
      
