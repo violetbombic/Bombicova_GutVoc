@@ -143,6 +143,7 @@ if ready2go is True:
      translation = []
      
      if lang is not ' ':
+          st.write("jdghksjhkjsfhksjd")
           translation = []
           for word in final_list:
                translword = translator.translate(word, lang)
