@@ -183,7 +183,7 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
-          return df.to_csv().encode('utf-8').sort_values("Word")
+          return df.to_csv().encode('utf-8')
 
 
      csv = convert_df(df1)
