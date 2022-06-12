@@ -199,7 +199,7 @@ if ready2go is True:
      comment_words = ''
      stopwords = set(STOPWORDS)
  
-     for val in df1.iloc[:, 0]:
+     for val in df.iloc[:, 0]:
           val = str(val)
           slova = val.split()
           for i in range(len(slova)):
