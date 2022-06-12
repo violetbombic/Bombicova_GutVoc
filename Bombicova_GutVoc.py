@@ -126,15 +126,15 @@ if ready2go is True:
      #st.write('You selected:', language_option)
 
      lang = ' '
-     if language_option.lower() == 'Slovak':
+     if language_option  == 'Slovak':
           lang = 'sk'
-     elif language_option.lower() == 'Italian':
+     elif language_option  == 'Italian':
           lang = 'it'
-     elif language_option.lower() == 'German':
+     elif language_option == 'German':
           lang = 'de'
-     elif language_option.lower() == 'Czech':
+     elif language_option == 'Czech':
           lang = 'cz'
-     elif language_option.lower() == 'Urdu':
+     elif language_option == 'Urdu':
           lang = 'ur'
      else:
           pass
