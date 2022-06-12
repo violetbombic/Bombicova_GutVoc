@@ -69,26 +69,26 @@ if option == 'Text file':
           clean_text = str(clean_text[:500])
           #st.write(clean_text)
           st.subheader("Here is your text: ")
-          with st.expander("Please click here to see the full text"):
+          with st.expander("Please click here to see the full text"):e
                st.write(text)
           ready2go = True
             
      
-elif option == 'url':
-     url_input = st.text_input("Please insert an url")
-     response = requests.get(url_input)
-     response.encoding = "utf-8"
-     text = response.text
-     start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
-     end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
-     text = text[start_:end_]
-     clean_text=re.sub("([^A-Za-z])"," ",text).upper()
-     clean_text = str(clean_text[:500])
-     #st.write(clean_text)       
-     st.subheader("Here is your text: ")
-     with st.expander("Please click here to see the full text"):
-          st.write(text)
-     ready2go = True
+# elif option == 'url':
+#      url_input = st.text_input("Please insert an url")
+#      response = requests.get(url_input)
+#      response.encoding = "utf-8"
+#      text = response.text
+#      start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
+#      end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
+#      text = text[start_:end_]
+#      clean_text=re.sub("([^A-Za-z])"," ",text).upper()
+#      clean_text = str(clean_text[:500])
+#      #st.write(clean_text)       
+#      st.subheader("Here is your text: ")
+#      with st.expander("Please click here to see the full text"):
+#           st.write(text)
+#      ready2go = True
      
 if ready2go is True:
      #PROCESSES
@@ -172,7 +172,7 @@ if ready2go is True:
           pos_tags.append(pronunciation)
      st.write(pos_tags)
 
-     df = pd.DataFrame({"Word" : final_list, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
+     df = pd.DataFrame({"Word" : final_list, "Translation": translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
      df1 = df.sort_values("Word")
      #df2 = df1.reset_index(inplace = True) 
      #st.write(df)
