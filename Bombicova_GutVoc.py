@@ -177,7 +177,7 @@ if ready2go is True:
      df = df.sort_values(['Word'], ascending=(True))
      #df2 = df1.reset_index(inplace = True) 
      st.dataframe(df)
-     df_to_csv = df.to_csv()
+     df_to_csv = df.to_csv(encoding = 'utf-8-sig')
      
      #OUTPUT
      st.subheader("Now you can download your Vocabulary!")
