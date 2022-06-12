@@ -178,7 +178,7 @@ if ready2go is True:
      #df1 = df.sort_values(['Word'], ascending=(True))
      #df2 = df1.reset_index(inplace = True) 
      #st.write(df)
-     st.dataframe(df1)
+     st.dataframe(df)
 
      #OUTPUT
      st.subheader("Now you can download your Vocabulary!")
