@@ -1,6 +1,6 @@
 nltk
 requests
-googletrans
+googletrans==4.0.0-rc1
 pandas
 click<=8.0.4
 matplotlib
