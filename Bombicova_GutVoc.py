@@ -174,24 +174,23 @@ if ready2go is True:
      st.write(pos_tags)
 
      df = pd.DataFrame({"Word" : final_list, "Translation": translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
-     #df1 = df.sort_values("Word") 
-     #df1 = df.sort_values(['Word'], ascending=(True))
+     df = df.sort_values(['Word'], ascending=(True))
      #df2 = df1.reset_index(inplace = True) 
-     #st.write(df)
      st.dataframe(df)
-
+     df_to_csv = df.to_csv()
+     
      #OUTPUT
      st.subheader("Now you can download your Vocabulary!")
 
-     @st.cache
-     def convert_df(df):
-          df = df.sort_values(['Word'], ascending=(True))
-          return df.to_csv() #.encode('utf-8')
+#      @st.cache
+#      def convert_df(df):
+#           df = df.sort_values(['Word'], ascending=(True))
+#           return df.to_csv().encode('utf-8')
 
 
-     csv = convert_df(df)
+     #csv = convert_df(df)
 
-     st.download_button('Click here to download it',csv, "your_vocabulary.csv","text/csv",key='download-csv')
+     st.download_button('Click here to download it',df_to_csv, "your_vocabulary.csv","text/csv",key='download-csv')
      
      
      st.balloons()
