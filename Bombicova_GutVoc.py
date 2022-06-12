@@ -175,7 +175,7 @@ if ready2go is True:
 
      df = pd.DataFrame({"Word" : final_list, "Translation": translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
      #df1 = df.sort_values("Word") 
-     df1 = df.sort_values(['Word'], ascending=(True))
+     #df1 = df.sort_values(['Word'], ascending=(True))
      #df2 = df1.reset_index(inplace = True) 
      #st.write(df)
      st.dataframe(df1)
@@ -185,6 +185,7 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
+          df1 = df.sort_values(['Word'], ascending=(True))
           return df.to_csv() #.encode('utf-8')
 
 
