@@ -65,7 +65,7 @@ if option == 'Text file':
           start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
           end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
           text = text[start_:end_]
-          clean_text=re.sub("([^A-Za-z])"," ",text)  #.upper()
+          clean_text=re.sub("([^A-Za-z])"," ",text).lower()
           clean_text = str(clean_text[:500])
           #st.write(clean_text)
           st.subheader("Here is your text: ")
@@ -82,7 +82,7 @@ if option == 'Text file':
 #      start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
 #      end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
 #      text = text[start_:end_]
-#      clean_text=re.sub("([^A-Za-z])"," ",text)  #.upper()
+#      clean_text=re.sub("([^A-Za-z])"," ",text).lower()
 #      clean_text = str(clean_text[:500])
 #      #st.write(clean_text)       
 #      st.subheader("Here is your text: ")
@@ -172,7 +172,10 @@ if ready2go is True:
           pronunciation = dataFromDatamuse[0]['tags'][-1]
           pos_tags.append(pronunciation)
      #st.write(pos_tags)
-
+     
+     
+     #OUTPUT
+     st.subheader("Here is your vocabulary")
      df = pd.DataFrame({"Word" : final_list, "Translation": translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
      df = df.sort_values(['Word'], ascending=(True))
      #df2 = df1.reset_index(inplace = True) 
