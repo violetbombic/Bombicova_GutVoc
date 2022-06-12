@@ -65,7 +65,7 @@ if option == 'Text file':
           start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
           end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
           text = text[start_:end_]
-          clean_text=re.sub("([^A-Za-z])"," ",text).upper()
+          clean_text=re.sub("([^A-Za-z])"," ",text)  #.upper()
           clean_text = str(clean_text[:500])
           #st.write(clean_text)
           st.subheader("Here is your text: ")
@@ -82,7 +82,7 @@ if option == 'Text file':
 #      start_ = re.search(r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*", text).span()[1]
 #      end_ = re.search(r"\*\*\* END OF THE PROJECT GUTENBERG EBOOK", text).span()[0]
 #      text = text[start_:end_]
-#      clean_text=re.sub("([^A-Za-z])"," ",text).upper()
+#      clean_text=re.sub("([^A-Za-z])"," ",text)  #.upper()
 #      clean_text = str(clean_text[:500])
 #      #st.write(clean_text)       
 #      st.subheader("Here is your text: ")
@@ -107,7 +107,7 @@ if ready2go is True:
      #st.write(no_double_liste)
 
      final_list = [word for word in no_double_list if len(word) >= 3]
-     st.write(final_list)
+     #st.write(final_list)
 
      #lemmatization
      lemmatizer = WordNetLemmatizer()
@@ -115,7 +115,7 @@ if ready2go is True:
      for word in final_list:
           lem = lemmatizer.lemmatize(word)
           lemma.append(lem)
-     st.write(lemma)
+     #st.write(lemma)
 
 
      # #Words translation
@@ -148,8 +148,8 @@ if ready2go is True:
           for word in final_list:
                translword = translator.translate(word, lang)
                translation.append(translword.text)
-          st.write(translation)
-          st.write(len(translation))
+          #st.write(translation)
+          #st.write(len(translation))
 
 
      #pronunciation
@@ -161,7 +161,7 @@ if ready2go is True:
           datamuse_data = dataFromDatamuse[0]['tags'][-1]
           pronunciation = re.sub("ipa_pron:"," ",datamuse_data)
           pron.append(pronunciation) 
-     st.write(pron)
+     #st.write(pron)
 
      #pos-tag
      pos_tags = []
@@ -171,7 +171,7 @@ if ready2go is True:
           dataFromDatamuse = json.loads(response.text)
           pronunciation = dataFromDatamuse[0]['tags'][-1]
           pos_tags.append(pronunciation)
-     st.write(pos_tags)
+     #st.write(pos_tags)
 
      df = pd.DataFrame({"Word" : final_list, "Translation": translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
      df = df.sort_values(['Word'], ascending=(True))
