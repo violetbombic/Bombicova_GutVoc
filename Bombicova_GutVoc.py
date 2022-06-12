@@ -69,7 +69,7 @@ if option == 'Text file':
           clean_text = str(clean_text[:500])
           #st.write(clean_text)
           st.subheader("Here is your text: ")
-          with st.expander("Please click here to see the full text"):e
+          with st.expander("Please click here to see the full text"):
                st.write(text)
           ready2go = True
             
@@ -179,7 +179,7 @@ if ready2go is True:
      st.dataframe(df1)
 
      #OUTPUT
-     st.subheader("Now you can dowload your Vocabulary!")
+     st.subheader("Now you can download your Vocabulary!")
 
      @st.cache
      def convert_df(df1):
