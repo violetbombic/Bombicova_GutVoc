@@ -140,7 +140,7 @@ if ready2go is True:
           pass
 
      translator = Translator()
-     #translation = []
+     translation = []
      
      if lang is not ' ':
           translation = []
@@ -183,7 +183,7 @@ if ready2go is True:
 
      @st.cache
      def convert_df(df1):
-          return df.to_csv().encode('utf-8')
+          return df.to_csv() #.encode('utf-8')
 
 
      csv = convert_df(df1)
