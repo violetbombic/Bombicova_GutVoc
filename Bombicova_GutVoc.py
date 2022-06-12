@@ -174,7 +174,8 @@ if ready2go is True:
      st.write(pos_tags)
 
      df = pd.DataFrame({"Word" : final_list, "Translation": translation, "Lema": lemma, "IPA_pron": pron, "Pos-tag": pos_tags})
-     df1 = df.sort_values("Word")
+     #df1 = df.sort_values("Word") 
+     df1 = df.sort_values(['Word'], ascending=(True))
      #df2 = df1.reset_index(inplace = True) 
      #st.write(df)
      st.dataframe(df1)
